@@ -1,0 +1,54 @@
+//Crear proyecto nuevo (crea una carpeta con el mismo nombre)
+ng new nombre_proyecto
+    --skip-install -> No instala paquetes localmente (no ejecuta npm install)
+    --dry-run -> Reporta los archivos a crear pero no los crea
+    --ng(version) -> Crea el proyecto en una version determinada
+    --prefix -> Indica un prefijo distinto a "app"
+    --skip-tests -> No crea archivos "spec" (Para testing)
+    --style -> Indica que se quiere cambiar el formato de estilos (scss, css, etc)
+    --rounting -> Genera un template para el ruteo de urls
+    -skip-git -> No iniciliza git
+//Inicia el servidor local y puerto de escucha
+ng serve
+    -o -> Abre el navegador con el servidor local y puerto
+//Verifica errores de sintaxis de typescript en el proyecto
+ng lint
+    --format -> Le da formato a los errores
+    --fix -> corrige automaticamente los errores
+//Crea archivos o formatos para typescript
+ng generate (g) <blueprint> <options>
+    -blueprints
+        component (c) -> genera un componente (seguido del nombre del componente)
+        -options
+            --flat -> No genera carpeta para el blueprint
+            --inline-template (-it) -> Indica que no se genere archivo html para el template y se creará en el archivo .ts
+            --inline-style (-is) -> Indica que no se genera archivo de estilos y se crearán (los estilos) en el archivo .ts
+            --spec -> No genera archivo para testing
+            --dry-run (-d) -> Reporta el archivo a crear, pero no lo crea
+            --view-encapsulation (-ve) -> pendiente de ver
+            --changedetection (-cd) -> pendiente de ver
+        directive (d) -> Genera una directiva (seguido del nombre)
+            --dry-run (-d) -> Reporta el archivo a crear, pero no lo crea
+        service (s) -> Genera un servicio (seguido del nombre)
+            --dry-run (-d) -> Reporta el archivo a crear, pero no lo crea
+            --module (-m) -> Indica a que module debe importarse
+        class (cl) -> Genera una clase (seguido por el nombre)
+            --dry-run (-d) -> Reporta el archivo a crear, pero no lo crea
+        interface (i) -> Genera una interface (seguido del nombre)
+            --dry-run (-d) -> Reporta el archivo a crear, pero no lo crea
+        enum (e) -> Genera un archivo de enum
+        pipe (p) -> Genera un archivo para pipes
+        module (m) -> Genera la estructura para un modulo (crea una carpeta por default)
+        guard -> Genera la estructura para hacer validaciones sobre componentes
+//Compila el proyecto a producción
+ng build
+        --aot -> Elimina lo que no se necesita
+        --prod -> Genera archivos para producción
+//Cambia los comandos en package.json para ejecutar de ng a webpack (start, build, etc)
+ng eject
+//Testea el proyecto en busca de bugs
+ng test
+
+
+//Instala el theme para dar estilos
+npm install @angular/material --save
