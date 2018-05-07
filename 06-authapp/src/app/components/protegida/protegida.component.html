@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-4" *ngIf="profile?.picture">
+    <img [src]="profile.picture">
+  </div>
+
+  <div class="col-md-8" *ngIf="profile">
+    <ul class="list-group">
+      <li class="list-group-item">{{ profile.name }}</li>
+      <li class="list-group-item">{{ profile.gender }}</li>
+      <li class="list-group-item">{{ profile.updated_at | date: 'dd MMM yyyy' }}</li>
+    </ul>
+  </div>
+</div>
