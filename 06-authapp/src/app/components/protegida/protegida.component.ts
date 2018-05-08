@@ -15,11 +15,9 @@ export class ProtegidaComponent implements OnInit {
   ngOnInit() {
     if(this.authService.userProfile) {
       this.profile = this.authService.userProfile;
-      console.log(this.authService.userProfile);
     } else {
       this.authService.getProfile((err, profile) => {
         this.profile = profile;
-        console.log(profile);
       });
     }
   }
