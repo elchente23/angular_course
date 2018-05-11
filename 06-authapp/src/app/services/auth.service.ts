@@ -12,7 +12,7 @@ export class AuthService {
     responseType: 'token id_token',
     audience: 'https://angular-course.auth0.com/userinfo',
     redirectUri: 'http://localhost:4200/callback',
-    scope: 'openid'
+    scope: 'openid profile'
   });
 
   userProfile: any;

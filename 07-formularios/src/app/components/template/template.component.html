@@ -53,7 +53,70 @@
     </div>
   </div>
 
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">País</label>
+    <div class="col-sm-8">
+      <select name="pais" [(ngModel)]="usuario.pais" class="form-control" required>
+        <option *ngFor="let pais of paises" [value]="pais.codigo">{{ pais.pais }}</option>
+      </select>
+    </div>
+  </div>
 
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Género</label>
+      <div class="col-sm-8">
+        <div class="custom-control custom-radio custom-control-inline">
+          <input 
+              type="radio" 
+              name="genero"
+              class="custom-control-input" 
+              value="M"
+              [(ngModel)]="usuario.genero"
+              required>
+          <label class="custom-control-label">Masculino</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input 
+              type="radio" 
+              name="genero" 
+              value="F"
+              [(ngModel)]="usuario.genero"
+              class="custom-control-input" 
+              required>
+          <label class="custom-control-label">Femenino</label>
+        </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Género</label>
+      <div class="col-sm-8">
+        <div *ngFor="let g of generos" class="custom-control custom-radio custom-control-inline">
+          <input 
+              type="radio" 
+              name="genero"
+              [value]="g.codigo"
+              class="custom-control-input" 
+              [(ngModel)]="usuario.genero"
+              required>
+          <label class="custom-control-label">{{g.genero}}</label>
+        </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+      <div class="col-sm-8">
+        <div class="custom-control custom-checkbox">
+          <input 
+              name="aceptar"
+              type="checkbox" 
+              class="custom-control-input"
+              [(ngModel)]="usuario.aceptar"
+              required>
+          <label class="custom-control-label">Aceptar condiciones</label>
+        </div>
+    </div>
+  </div>
 
   <div class="form-group row">
     <label class="col-sm-2 col-form-label">&nbsp;</label>
@@ -65,3 +128,7 @@
   </div>
 
 </form>
+
+<pre>
+  {{usuario | json}}
+</pre>
