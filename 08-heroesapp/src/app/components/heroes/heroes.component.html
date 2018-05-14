@@ -25,20 +25,34 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
+          <tr *ngFor="let key of heroes | getKeys; let index = index">
+            <th scope="row">{{ index + 1 }}</th>
+            <td>{{ heroes[key].nombre }}</td>
+            <td>{{ heroes[key].casa }}</td>
+            <td>
+              <button 
+                type="button" 
+                class="btn btn-outline-success"
+                [routerLink]="['/heroe', key]">Editar
+              </button>
+              <button 
+                type="button"
+                class="btn btn-outline-danger"
+                (click)="eliminarHeroe(key)">Eliminar
+              </button>
+            </td>
           </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>          
         </tbody>
       </table>
+
+      <div *ngIf="(heroes | getKeys).length == 0 && !loading" class="alert alert-info" role="alert">
+        <strong>No hay</strong> registros que mostrar
+      </div>
+
+      <div *ngIf="loading" class="alert alert-warning" role="alert">
+        <strong>Cargando...</strong>, por favor espere
+      </div>
+
     </div>
   </div>
 </div>

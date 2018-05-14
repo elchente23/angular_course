@@ -7,6 +7,8 @@ import { APP_ROUTING } from './app.routes';
 
 import { HeroesService } from './services/heroes.service';
 
+import { GetKeys } from  '../app/pipes/getkeys.pipes';
+
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroes/heroe.component';
@@ -16,7 +18,8 @@ import { HeroeComponent } from './components/heroes/heroe.component';
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroeComponent
+    HeroeComponent,
+    GetKeys
   ],
   imports: [
     BrowserModule,
