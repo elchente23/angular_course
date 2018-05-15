@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
-import { ChatService } from './services/chat.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +6,5 @@ import { ChatService } from './services/chat.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private cs: ChatService) {
-  }
+  title = 'app';
 }
