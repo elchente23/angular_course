@@ -1,3 +1,14 @@
-<p>
-  pelicula works!
-</p>
+<div class="row animated fadeIn">
+  <div class="col-md-6 text-right">
+    <img class="img-fluid" [src]="pelicula.poster_path | imagenes:pelicula.backdrop_path" />
+  </div>
+  <div class="col-md-6 text-left">    
+    <h3>{{ pelicula.original_title }}</h3>
+    <p class="text-justify">
+      {{ pelicula.overview }}
+    </p>
+    <small>{{ pelicula.tagline }}</small>
+    
+  </div>
+  <button type="button" class="btn btn-outline-danger btn-sm">Regresar</button>
+</div>

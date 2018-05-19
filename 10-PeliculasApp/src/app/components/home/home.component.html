@@ -1,40 +1,27 @@
 
 <h2>Películas en cartelera</h2>
 <hr>
-<div class="row">
-    <div class="div-pick-1">
-        <img class="" src="https://image.tmdb.org/t/p/w400/9ywA15OAiwjSTvg3cBs9B7kOCBF.jpg" alt="Card image">
-        <p class="pic-titulo">Fifty Shades Freed</p>
-    </div>
-    <div class="div-pick-2">
-        <img class="" src="https://image.tmdb.org/t/p/w200/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg" alt="Card image">
-        <p class="pic-titulo">Avengers: Infinity War</p>
-    </div>
-    <div class="div-pick-2">
-        <img class="" src="https://image.tmdb.org/t/p/w200/AlFqBwJnokrp9zWTXOUv7uhkaeq.jpg" alt="Card image">
-        <p class="pic-titulo">Black Panther</p>
-    </div>
-    <div class="div-pick-2">
-        <img class="" src="https://image.tmdb.org/t/p/w200/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg" alt="Card image">
-        <p class="pic-titulo">Last updated 3 mins ago</p>
-    </div>
-    <div class="div-pick-2">
-        <img class="" src="https://image.tmdb.org/t/p/w200/AlFqBwJnokrp9zWTXOUv7uhkaeq.jpg" alt="Card image">
-        <p class="pic-titulo">Last updated 3 mins ago</p>
-    </div>    
-
-    <div class="div-pick-1">
-        <img class="" src="https://image.tmdb.org/t/p/w400/AlFqBwJnokrp9zWTXOUv7uhkaeq.jpg" alt="Card image">
-        <p class="pic-titulo">Last updated 3 mins ago</p>
+<div class="row animated fadeIn">
+    <div class="div-pick-1 puntero" *ngFor="let cartelera of carteleras" [routerLink]="['/pelicula', cartelera.id]">
+        <img class="" [src]="cartelera.backdrop_path | imagenes:cartelera.poster_path" [alt]="cartelera.original_title">
+        <p class="pic-titulo">{{ cartelera.original_title }}</p>
     </div>
 </div>
 
-<div class="row">
-  <h2>Populares</h2>
-
+<h2>Populares</h2>
+<hr>
+<div class="row animated fadeIn">
+    <div class="div-pick-1 puntero" *ngFor="let popular of populares" [routerLink]="['/pelicula', popular.id]">
+        <img class="" [src]="popular.backdrop_path | imagenes:popular.poster_path" [alt]="popular.original_title">
+        <p class="pic-titulo">{{ popular.original_title }}</p>
+    </div>
 </div>
 
-<div class="row">
-  <h2>Populares infantiles</h2>
-
+<h2>Populares infantiles</h2>
+<hr>
+<div class="row animated fadeIn">
+    <div class="div-pick-1 puntero" *ngFor="let infantil of infantiles" [routerLink]="['/pelicula', infantil.id]">
+        <img class="" [src]="infantil.backdrop_path | imagenes:infantil.poster_path" [alt]="infantil.original_title">
+        <p class="pic-titulo">{{ infantil.original_title }}</p>
+    </div>
 </div>
