@@ -17,7 +17,7 @@ export class BuscarComponent implements OnInit {
       if(params["texto"]) {
         this.buscar = params['texto'];
         this.buscarPelicula();
-      }
+      } 
     });
 
   }
