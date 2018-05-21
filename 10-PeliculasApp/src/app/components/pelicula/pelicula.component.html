@@ -1,14 +1,32 @@
-<div class="row animated fadeIn">
+<div *ngIf="pelicula" class="container main-container animated fadeIn fast">
   <div class="col-md-6 text-right">
     <img class="img-fluid" [src]="pelicula.poster_path | imagenes:pelicula.backdrop_path" />
   </div>
   <div class="col-md-6 text-left">    
-    <h3>{{ pelicula.original_title }}</h3>
-    <p class="text-justify">
-      {{ pelicula.overview }}
-    </p>
-    <small>{{ pelicula.tagline }}</small>
-    
+    <div class="row">
+      <h3>{{ pelicula.original_title }}</h3>
+      <p class="text-justify">
+        {{ pelicula.overview }}
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <h5>Frase celebre</h5>
+        <p>{{ pelicula.tagline }}</p>
+      </div>
+
+      <div class="col-sm-12">
+        <small>Popularidad: </small><small class="badge badge-primary">10</small>
+      </div>
+
+      <div class="col-sm-12">
+        <small>Voto promedio: </small><small class="badge badge-primary">{{ pelicula.vote_average }}</small>
+      </div>
+      <br>
+      <br>
+      <div class="col-sm-12">
+        <button (click)="regresar()" type="button" class="btn btn-outline-danger btn-sm">Regresar</button>
+      </div>
+    </div>
   </div>
-  <button type="button" class="btn btn-outline-danger btn-sm">Regresar</button>
 </div>

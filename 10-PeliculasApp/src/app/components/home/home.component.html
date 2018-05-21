@@ -1,27 +1,5 @@
+<app-galeria [peliculas]="carteleras" titulo="Películas en cartelera"></app-galeria>
 
-<h2>Películas en cartelera</h2>
-<hr>
-<div class="row animated fadeIn">
-    <div class="div-pick-1 puntero" *ngFor="let cartelera of carteleras" [routerLink]="['/pelicula', cartelera.id]">
-        <img class="" [src]="cartelera.backdrop_path | imagenes:cartelera.poster_path" [alt]="cartelera.original_title">
-        <p class="pic-titulo">{{ cartelera.original_title }}</p>
-    </div>
-</div>
+<app-galeria [peliculas]="populares" titulo="Populares"></app-galeria>
 
-<h2>Populares</h2>
-<hr>
-<div class="row animated fadeIn">
-    <div class="div-pick-1 puntero" *ngFor="let popular of populares" [routerLink]="['/pelicula', popular.id]">
-        <img class="" [src]="popular.backdrop_path | imagenes:popular.poster_path" [alt]="popular.original_title">
-        <p class="pic-titulo">{{ popular.original_title }}</p>
-    </div>
-</div>
-
-<h2>Populares infantiles</h2>
-<hr>
-<div class="row animated fadeIn">
-    <div class="div-pick-1 puntero" *ngFor="let infantil of infantiles" [routerLink]="['/pelicula', infantil.id]">
-        <img class="" [src]="infantil.backdrop_path | imagenes:infantil.poster_path" [alt]="infantil.original_title">
-        <p class="pic-titulo">{{ infantil.original_title }}</p>
-    </div>
-</div>
+<app-galeria [peliculas]="infantiles" titulo="Populares infantiles"></app-galeria>

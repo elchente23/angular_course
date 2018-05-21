@@ -11,9 +11,13 @@ export class PeliculaComponent implements OnInit {
 
   private pelicula: any;
 
-  constructor(private ps: PeliculasService, private activatedRoute: ActivatedRoute) {
+  constructor(private ps: PeliculasService, 
+              private activatedRoute: ActivatedRoute) {
 
     this.activatedRoute.params.subscribe(param => {
+
+      param[""]
+
       this.ps.getPelicula(param["id"])
         .subscribe(movie => {
           this.pelicula = movie;

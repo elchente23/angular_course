@@ -1,0 +1,8 @@
+<h2>{{ titulo }}</h2>
+<hr>
+<div class="row animated fadeIn fast">
+    <div class="div-pick-1 puntero" *ngFor="let pelicula of peliculas" [routerLink]="['/pelicula', pelicula.id, 'home']">
+        <img class="" [src]="pelicula.backdrop_path | imagenes:pelicula.poster_path" [alt]="pelicula.original_title">
+        <p class="pic-titulo">{{ pelicula.original_title }}</p>
+    </div>
+</div>
