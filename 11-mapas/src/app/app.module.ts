@@ -8,6 +8,7 @@ import { MapaComponent } from './components/mapa/mapa.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { MapaEditarComponent } from './components/mapa/mapa-editar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   entryComponents: [
@@ -24,7 +25,8 @@ import { MapaEditarComponent } from './components/mapa/mapa-editar.component';
     MaterialModule,
     AgmCoreModule.forRoot ( {
       apiKey: 'AIzaSyDNOu2JQ001PxZY-GVwFvVou0_6h_Sj-14'
-    })
+    }),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
